@@ -5,6 +5,6 @@ The differential equations are solved by approximation techinque similar to RK2 
 provided conditions to be initial value problem
 Approximation used by me 
 Given second order differential equation 
-(d^2 x)/〖dt〗
+
 
 
