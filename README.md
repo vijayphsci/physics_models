@@ -3,6 +3,6 @@ Physics models are created using matplotlib library matplotlib.animation in Pyth
 Equation of motion are obtained by Lagrangian principle and Newton's second law
 The differential equations are solved by approximation techinque similar to RK2 and RK4 methods
 
-
+### vijay kag
 
 
