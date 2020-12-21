@@ -1,4 +1,4 @@
-#This Simulation Created by Vijay Kag 
+#This Simulation is Created by Vijay Kag 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
