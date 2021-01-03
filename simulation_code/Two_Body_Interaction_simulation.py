@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 import math as mt
 from physical_objects import circle,sline,springcoil
 class Two_Body_Interaction:
-    def __init__(self,interaction_const=20,mass1=1,mass2=1,position1=(0,0),position2=(5,0),velocity1=(0,1),velocity2=(0,-1),time=150,dt=0.1,frame_interval=15,figsize=(10,8)):
+    def __init__(self,interaction_const=-20,mass1=1,mass2=1,position1=(0,0),position2=(5,0),velocity1=(0,1),velocity2=(0,-1),time=150,dt=0.1,frame_interval=15,figsize=(10,8)):
         self.m1=mass1
         self.m2=mass2
         self.k12=interaction_const
@@ -31,13 +31,13 @@ class Two_Body_Interaction:
         self.ani=None
     def f1(self,x1,y1,x2,y2):
         t1=mt.pow((x2-x1)**2+(y2-y1)**2,1.5)
-        f1x=self.k12*(x2-x1)/t1
-        f1y=self.k12*(y2-y1)/t1
+        f1x=self.k12*(x1-x2)/t1
+        f1y=self.k12*(y1-y2)/t1
         return f1x/self.m1,f1y/self.m1
     def f2(self,x1,y1,x2,y2):
         t1=mt.pow((x2-x1)**2+(y2-y1)**2,1.5)
-        f2x= -self.k12*(x2-x1)/t1
-        f2y= -self.k12*(y2-y1)/t1
+        f2x= self.k12*(x2-x1)/t1
+        f2y= self.k12*(y2-y1)/t1
         return f2x/self.m2,f2y/self.m2    
     def __solve_system(self):
         self.t.append(0)
