@@ -42,20 +42,20 @@ class Three_Body_Interaction:
     def f1(self,x1,y1,x2,y2,x3,y3):
         t1=mt.pow((x2-x1)**2+(y2-y1)**2,1.5)
         t2=mt.pow((x3-x1)**2+(y3-y1)**2,1.5)
-        f1x= self.k12*(x2-x1)/t1+self.k13*(x3-x1)/t2
-        f1y= self.k12*(y2-y1)/t1+self.k13*(y3-y1)/t2
+        f1x= self.k12*(x1-x2)/t1+self.k13*(x1-x3)/t2
+        f1y= self.k12*(y1-y2)/t1+self.k13*(y1-y3)/t2
         return f1x/self.m1,f1y/self.m1
     def f2(self,x1,y1,x2,y2,x3,y3):
         t1=mt.pow((x2-x1)**2+(y2-y1)**2,1.5)
         t2=mt.pow((x3-x2)**2+(y3-y2)**2,1.5)
-        f2x= -self.k12*(x2-x1)/t1+self.k23*(x3-x2)/t2
-        f2y= -self.k12*(y2-y1)/t1+self.k23*(y3-y2)/t2
+        f2x= self.k12*(x2-x1)/t1+self.k23*(x2-x3)/t2
+        f2y= self.k12*(y2-y1)/t1+self.k23*(y2-y3)/t2
         return f2x/self.m2,f2y/self.m2
     def f3(self,x1,y1,x2,y2,x3,y3):
         t1=mt.pow((x3-x1)**2+(y3-y1)**2,1.5)
         t2=mt.pow((x3-x2)**2+(y3-y2)**2,1.5)
-        f3x= -self.k13*(x3-x1)/t1-self.k23*(x3-x2)/t2
-        f3y= -self.k13*(y3-y1)/t1-self.k23*(y3-y2)/t2
+        f3x= self.k13*(x3-x1)/t1+self.k23*(x3-x2)/t2
+        f3y= self.k13*(y3-y1)/t1+self.k23*(y3-y2)/t2
         return f3x/self.m3,f3y/self.m3
     def __solve_system(self):
         self.t.append(0)
