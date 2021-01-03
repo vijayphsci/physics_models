@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 import math as mt
 from physical_objects import circle,sline,springcoil
 class Three_Body_Interaction:
-    def __init__(self,k12=0.1,k13=0.2,k23=0.1,mass1=1.5,mass2=7,mass3=9,position1=(0,0),position2=(5,0),position3=(2.5,4),velocity1=(0,0),velocity2=(0,0),velocity3=(0,0),time=200,dt=0.1,frame_interval=15,figsize=(10,8),repeat=True):
+    def __init__(self,k12=-0.1,k13=-0.2,k23=-0.1,mass1=1.5,mass2=7,mass3=9,position1=(0,0),position2=(5,0),position3=(2.5,4),velocity1=(0,0),velocity2=(0,0),velocity3=(0,0),time=200,dt=0.1,frame_interval=15,figsize=(10,8),repeat=True):
         self.m1=mass1
         self.m2=mass2
         self.m3=mass3
